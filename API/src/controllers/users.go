@@ -8,6 +8,7 @@ import (
 
 	"github.com/gasparguilherme/Netwise/api/src/database"
 	"github.com/gasparguilherme/Netwise/api/src/models"
+	"github.com/gasparguilherme/Netwise/api/src/repositories"
 )
 
 // criar usuario insere um usuario no banco de dados
@@ -25,6 +26,9 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	repository := repositories.NewUserRepository(db)
+	repository.Create(userRequest)
 
 }
 
