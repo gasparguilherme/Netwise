@@ -1,10 +1,31 @@
 package controllers
 
-import "net/http"
+import (
+	"encoding/json"
+	"log"
+	"log/slog"
+	"net/http"
+
+	"github.com/gasparguilherme/Netwise/api/src/database"
+	"github.com/gasparguilherme/Netwise/api/src/models"
+)
 
 // criar usuario insere um usuario no banco de dados
 func CreateUser(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Create user!"))
+	var userRequest models.User
+	err := json.NewDecoder(r.Body).Decode(&userRequest)
+	if err != nil {
+		slog.Error("unable to unterpret JSON", "error", err)
+		http.Error(w, "Invalid JSON", http.StatusBadRequest)
+		return
+
+	}
+
+	db, err := database.Connection()
+	if err != nil {
+		log.Fatal(err)
+	}
+
 }
 
 // buscando todos os usuarios salvo no banco
