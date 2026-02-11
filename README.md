@@ -1,28 +1,42 @@
-# Netwise
+🚀 Netwise
 
-Possível criar publicações que contenham somente texto.
+Uma rede social simples onde usuários podem criar publicações contendo apenas texto e interagir com outros usuários.
 
-#Usuarios:
-Crud
-Seguir outros usuarios
-Parar de seguir outro usuario
-Buscar todos os usuarios que segue
-Buscar todos os usuarios que são seguidos
-Atualizar senha
+📌 Visão Geral
 
+O Netwise é composto por:
 
-#Banco de Dados:
-Usuarios
-Seguidores
+🧠 API – Back-end
 
+💻 Web App – Front-end
 
-#Publicações:
-Crud
-Buscar usuario de acordo com os usuarios que segue
-Curtir
+👤 Funcionalidades de Usuários
 
+✅ CRUD de usuários
 
-VISAO GERAL - NETWISE
-#Componentes:
-API [Back-end]
-Web App [Front-End]
+➕ Seguir outros usuários
+
+➖ Deixar de seguir usuários
+
+📄 Listar usuários que eu sigo
+
+👥 Listar usuários que me seguem
+
+🔐 Atualizar senha
+
+📝 Funcionalidades de Publicações
+
+✅ CRUD de publicações (somente texto)
+
+📰 Buscar publicações de usuários que eu sigo
+
+❤️ Curtir publicações
+
+🗄️ Banco de Dados
+Entidades:
+
+👤 Usuários
+
+🔁 Seguidores
+
+📝 Publicações
