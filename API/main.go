@@ -5,13 +5,14 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/gasparguilherme/Netwise/api/src/config"
 	"github.com/gasparguilherme/Netwise/api/src/router"
 )
 
 func main() {
-	fmt.Println("Rodando API!")
+	config.Load()
+	r := router.Generate()
 
-	r := router.Gerar()
-
-	log.Fatal((http.ListenAndServe(":5000", r)))
+	fmt.Printf("Escutando na porta %d", config.APIPort)
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", config.APIPort), r))
 }
